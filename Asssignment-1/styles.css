@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(233, 238, 243);
+    background-color: rgb(225, 229, 233);
 
 }
 .resume-container{
@@ -19,6 +19,7 @@ body{
     margin-bottom: 100px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 250ms ease, box-shadow 250ms ease;
+    
 
 }
 
@@ -41,6 +42,7 @@ body{
     display: flex;
     flex-direction: row;    
     align-items: center;    
+    justify-content: center;
     gap: 24px;              
     text-align: left;    
     border-bottom: 2px solid #333; 
@@ -55,8 +57,8 @@ body{
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border : 2px solid black;
     border-radius: 50%;      
     object-fit: cover;     
@@ -67,6 +69,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 0 1 auto;
+    text-align: center;
 }
 
 .resume-section{
@@ -79,4 +83,13 @@ body{
 
 .skill-section{
     border-bottom: none;
+}
+
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-decoration-line: underline;
+    text-decoration-color: #333;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
