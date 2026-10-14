@@ -1,0 +1,197 @@
+/* Top utility bar */
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-info {
+    height: 36px;
+    display: flex;
+}
+
+/* Navbar */
+.navbar-main-div {
+    position: relative;
+    background-color: white;
+    min-height: 64px;
+}
+
+/* Nike logo */
+#NavLogo {
+    width: 4rem;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Search */
+.search-form {
+    flex-shrink: 0;
+}
+
+.search-input {
+    width: 150px;
+    border: none;
+    border-radius: 2rem;
+    background-color: #f5f5f5;
+}
+
+
+/* Hero section */
+.hero-section-main {
+    min-height: 100vh;
+    background-image: url('hero1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+.hero-content button {
+    padding: 0.7rem 1.5rem;
+    border: 0;
+    border-radius: 2rem;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+}
+
+.hero-content button:hover {
+    background-color: #e5e5e5;
+}
+
+/* Featured products carousel */
+.carousel-container{
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.featured-card{
+    flex: 0 0 85%;
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.featured-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.featured-card h3 {
+    margin-top: 0.75rem;
+}
+
+/* Mobile-first styles */
+.navbar-nav .nav-link {
+    color: black;
+    font-weight: 600;
+}
+
+
+
+@media (min-width: 768px) {
+    .carousel-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: visible;
+        padding: 1.5rem;
+    }
+
+    .featured-card {
+        min-width: 0;
+    }
+}
+
+/* Mobile navigation: links appear underneath the top row */
+@media (max-width: 991.98px) {
+    .navbar-main-div {
+        flex-wrap: wrap;
+    }
+
+    .navbar-collapse {
+        flex-basis: 100%;
+        order: 4;
+    }
+
+    .navbar-nav {
+        padding: 10px 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+
+    .search-input {
+        width: 110px;
+    }
+
+    .hero-section-main {
+    min-height: 50vh;
+    max-width: 200rem;
+    width: 100%;
+    background-image: url('hero1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    color: white;
+    text-align: center;
+}
+}
+
+/* Desktop navigation */
+@media (min-width: 992px) {
+    .navbar-main-div {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-collapse {
+        display: flex !important;
+        justify-content: center;
+        min-width: 0;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .navbar-nav .nav-link {
+        white-space: nowrap;
+    }
+
+    .search-form {
+        margin-left: auto;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+}
