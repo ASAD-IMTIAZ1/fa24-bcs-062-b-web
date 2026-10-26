@@ -514,3 +514,19 @@
         display: none;
     }
 }
+
+    /*Custom font*/
+  @font-face {
+    font-family: "Helvetica Now Text Medium";
+    font-style: normal;
+    src: url("https://www.nike.com/static/ncss/nike-design-system-fonts/dotcom/fonts/HelveticaNowTextNDL-Md.woff2") format("woff2"),
+         url("https://www.nike.com/static/ncss/nike-design-system-fonts/dotcom/fonts/HelveticaNowTextNDL-Md.woff") format("woff");
+  }
+
+  body {
+    font-family: "Helvetica Now Text Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: "Helvetica Now Text Medium", sans-serif;
+  }
