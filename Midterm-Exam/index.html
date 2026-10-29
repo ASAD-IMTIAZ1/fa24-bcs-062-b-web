@@ -18,8 +18,8 @@
 
             <!-- Left: Nike logo -->
             <a class="navbar-brand" href="#">
-                <img src="nike-4-logo-svgrepo-com.svg"
-                     alt="Nike logo"
+                <img src="https://placehold.co/120x60/ffffff/111111?text=LOGO"
+                     alt="Logo placeholder"
                      id="NavLogo">
             </a>
 
@@ -55,9 +55,111 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sportswear</a>
                     </li>
-                </ul>
+                    <!--the changes in midterm-->
+                    
+<!-- DESKTOP MEGA-MENU: place inside your existing navbar-nav <ul> -->
+<li class="nav-item mega-menu-item d-none d-lg-block">
+    <a class="nav-link mega-menu-trigger"
+       href="#"
+       aria-haspopup="true">
+        Shop by Category
+    </a>
 
-            </div>
+    <div class="mega-menu-panel">
+        <div class="mega-menu-column">
+            <h3>Footwear</h3>
+            <ul>
+                <li><a href="#">Running Shoes</a></li>
+                <li><a href="#">Football Boots</a></li>
+                <li><a href="#">Lifestyle Shoes</a></li>
+                <li><a href="#">Basketball Shoes</a></li>
+            </ul>
+        </div>
+
+        <div class="mega-menu-column">
+            <h3>Clothing</h3>
+            <ul>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Hoodies</a></li>
+                <li><a href="#">Sportswear</a></li>
+                <li><a href="#">Tracksuits</a></li>
+            </ul>
+        </div>
+
+        <div class="mega-menu-column">
+            <h3>Accessories</h3>
+            <ul>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Socks</a></li>
+                <li><a href="#">Caps</a></li>
+                <li><a href="#">Sports Equipment</a></li>
+            </ul>
+        </div>
+
+        
+<div class="mega-menu-column">
+    <h3>Training</h3>
+    <ul>
+        <li><a href="#">Training Shoes</a></li>
+        <li><a href="#">Training Tops</a></li>
+        <li><a href="#">Training Shorts</a></li>
+        <li><a href="#">Gym Essentials</a></li>
+    </ul>
+</div>
+
+<div class="mega-menu-column">
+    <h3>Collections</h3>
+    <ul>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Best Sellers</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="#">All Products</a></li>
+    </ul>
+</div>
+
+    </div>
+</li>
+
+<!-- MOBILE ACCORDION: place inside the same navbar-nav <ul> -->
+<li class="nav-item category-mobile d-lg-none">
+    <details>
+        <summary>Shop by Category</summary>
+
+        <div class="mobile-category-group">
+            <details>
+                <summary>Footwear</summary>
+                <ul>
+                    <li><a href="#">Running Shoes</a></li>
+                    <li><a href="#">Football Boots</a></li>
+                    <li><a href="#">Lifestyle Shoes</a></li>
+                    <li><a href="#">Basketball Shoes</a></li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Clothing</summary>
+                <ul>
+                    <li><a href="#">T-Shirts</a></li>
+                    <li><a href="#">Hoodies</a></li>
+                    <li><a href="#">Sportswear</a></li>
+                    <li><a href="#">Tracksuits</a></li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Accessories</summary>
+                <ul>
+                    <li><a href="#">Bags</a></li>
+                    <li><a href="#">Socks</a></li>
+                    <li><a href="#">Caps</a></li>
+                    <li><a href="#">Sports Equipment</a></li>
+                </ul>
+            </details>
+        </div>
+    </details>
+</li>
+
+
 
             <!-- Right: Search -->
             <form class="search-form" role="search">
@@ -66,6 +168,31 @@
                        placeholder="Search"
                        aria-label="Search">
             </form>
+
+            
+<!-- Cart icon: place immediately after the search form -->
+<a href="checkout.html"
+   class="cart-link"
+   aria-label="Go to checkout"
+   title="Shopping cart">
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="1.8"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         aria-hidden="true">
+
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+</a>
+
 
             <!-- Mobile hamburger -->
             <button class="navbar-toggler ms-2"
@@ -102,17 +229,23 @@
     <section aria-label="Featured shopping categories">
         <div class="carousel-container shadow-sm p-3 mb-5 bg-body rounded">
             <div class="featured-card ">
-                <img src="shopmens.jpg" alt="Men's collection">
+                <img src="https://placehold.co/960x1200/ffffff/111111?text=PRODUCT+1"
+                     alt="Product 1 placeholder"
+                     loading="lazy">
                 <h3>Shop Men's</h3>
             </div>
 
             <div class="featured-card">
-                <img src="shopwomen.jpg" alt="Women's collection">
+                <img src="https://placehold.co/960x1200/ffffff/111111?text=PRODUCT+2"
+                     alt="Product 2 placeholder"
+                     loading="lazy">
                 <h3>Shop Women's</h3>
             </div>
 
             <div class="featured-card">
-                <img src="shoplifestyle.jpg" alt="Nike lifestyle collection">
+                <img src="https://placehold.co/960x1200/ffffff/111111?text=PRODUCT+3"
+                     alt="Product 3 placeholder"
+                     loading="lazy">
                 <h3>Shop Lifestyle</h3>
             </div>
         </div>
@@ -120,23 +253,26 @@
 
     <!-- Jordan logo section -->
     <section class="Jordanlogo">
-        <img class="mjimage" src="jordan-2.svg" alt="MJ Logo">
+        <img class="mjimage"
+             src="https://placehold.co/160x80/ffffff/111111?text=LOGO"
+             alt="Logo placeholder"
+             loading="lazy">
     </section>
 
 
     <!-- Video carousel -->    
 <section id="nikeVideoSlider"
          class="carousel slide"
-         data-bs-ride="carousel
+         data-bs-ride="carousel"
          data-bs-interval="5000">
 
     <div class="carousel-inner">
 
         <div class="carousel-item active">
             <!-- First video and its content -->
-            <video autoplay muted playsinline loop class="video-carousel">
-                <source src="1stclip.mp4" type="video/mp4">
-            </video>
+            <img class="video-carousel"
+                 src="https://placehold.co/1600x900/ffffff/111111?text=VIDEO+1"
+                 alt="Video 1 placeholder">
             <div class="video-content">
                 <h2>LIT UP.</h2>
                 <p>BUY THE HARDEST FIT</p>
@@ -146,9 +282,9 @@
 
         <div class="carousel-item">
             <!-- Second video and its content -->
-            <video autoplay muted playsinline loop class="video-carousel">
-                <source src="2ndclip.mp4" type="video/mp4">
-            </video>
+            <img class="video-carousel"
+                 src="https://placehold.co/1600x900/ffffff/111111?text=VIDEO+2"
+                 alt="Video 2 placeholder">
             <div class="video-content">
                 <h2>HYPERNOVA BOOTS.</h2>
                 <p>Step into the future of basketball footwear.</p>
@@ -158,9 +294,9 @@
 
         <div class="carousel-item">
             <!-- Third video and its content -->
-            <video autoplay muted playsinline loop class="video-carousel">
-                <source src="3rdclip.mp4" type="video/mp4">
-            </video>
+            <img class="video-carousel"
+                 src="https://placehold.co/1600x900/ffffff/111111?text=VIDEO+3"
+                 alt="Video 3 placeholder">
             <div class="video-content">
                 <h2>TRAIN HARD.</h2>
                 <p>GET YOUR MOTIVATION UP.</p>
@@ -212,17 +348,23 @@
     <!-- Photo grid -->
     <section class="photo-gridblock" aria-label="Featured Nike stories">
         <article class="photo-grid-card photo-grid-card-large">
-            <img src="grid2.jpg" alt="Runner in Nike performance clothing">
+            <img src="https://placehold.co/1200x1600/ffffff/111111?text=IMAGE+1"
+                 alt="Image 1 placeholder"
+                 loading="lazy">
             <span class="photo-grid-caption">Style by After Dark Tour</span>
         </article>
 
         <article class="photo-grid-card">
-            <img src="grid1.jpg" alt="Athlete wearing Nike sportswear">
+            <img src="https://placehold.co/900x700/ffffff/111111?text=IMAGE+2"
+                 alt="Image 2 placeholder"
+                 loading="lazy">
             <span class="photo-grid-caption">Make a Statement</span>
         </article>
 
         <article class="photo-grid-card">
-            <img src="grid3.jpg" alt="Red Nike running shoe">
+            <img src="https://placehold.co/900x700/ffffff/111111?text=IMAGE+3"
+                 alt="Image 3 placeholder"
+                 loading="lazy">
             <span class="photo-grid-caption">Nike Alphafly 4: Get Notified</span>
         </article>
     </section>
@@ -230,7 +372,10 @@
     <!-- Repeated content sections -->
 
     <section class="Jordanlogo-repeat">
-        <img class="mjimage-repeat" src="nikesoccerlogo.png" alt="MJ Logo">
+        <img class="mjimage-repeat"
+             src="https://placehold.co/160x80/ffffff/111111?text=LOGO"
+             alt="Logo placeholder"
+             loading="lazy">
     </section>
 
     <section class="hero-section-final">
@@ -244,24 +389,39 @@
     <section aria-label="More featured shopping categories">
         <div class="featured-carousel-repeat">
             <div class="featured-card-repeat">
-                <img src="shoe1.jpg" alt="Men's collection">
+                 <a href="product.html">
+                 <img src="https://placehold.co/960x1200/ffffff/111111?text=PRODUCT+4"
+                      alt="Product 4 placeholder"
+                      loading="lazy">
+                </a>
                 <h3>Mercurial</h3>
             </div>
 
             <div class="featured-card-repeat">
-                <img src="shoe2.jpg" alt="Women's collection">
+                <a href="product.html">
+                    <img src="https://placehold.co/960x1200/ffffff/111111?text=PRODUCT+5"
+                         alt="Product 5 placeholder"
+                         loading="lazy">
+                </a>
                 <h3>Phantom</h3>
             </div>
 
             <div class="featured-card-repeat">
-                <img src="shoe3.jpg" alt="Nike lifestyle collection">
+                 <a href="product.html">
+                    <img src="https://placehold.co/960x1200/ffffff/111111?text=PRODUCT+6"
+                         alt="Product 6 placeholder"
+                         loading="lazy">
+                </a>
                 <h3>Tiempo</h3>
             </div>
         </div>
     </section>
 
     <section class="Jordanlogo-repeat">
-        <img class="mjimage-repeat" src="nfllogo.png" alt="MJ Logo">
+        <img class="mjimage-repeat"
+             src="https://placehold.co/160x80/ffffff/111111?text=LOGO"
+             alt="Logo placeholder"
+             loading="lazy">
     </section>
 
     <section class="hero-section-repeat">

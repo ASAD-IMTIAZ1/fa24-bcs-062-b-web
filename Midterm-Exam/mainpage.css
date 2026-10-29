@@ -23,6 +23,228 @@
     height: auto;
 }
 
+/* Keep the navbar above page content and sticky elements */
+nav.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+/* =========================================
+   TASK 1: MEGA-MENU
+   N = 62
+   BP = 662px
+   H = 74 degrees
+   K = 5 columns/groups
+========================================= */
+
+:root {
+    --bp: 662px;
+    --accent: hsl(74, 70%, 45%);
+}
+
+/* ---------- NAVBAR ---------- */
+
+/* Keep the navbar above page content */
+nav.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+/* ---------- DESKTOP MEGA-MENU ---------- */
+
+/* The menu item is the parent of the floating panel */
+.mega-menu-item {
+    position: static;
+}
+
+/* Full-width panel */
+.mega-menu-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    background-color: white;
+    color: #111;
+    padding: 32px 5%;
+
+    /* K = 5 columns */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 30px;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    z-index: 100000;
+}
+
+/* Open when hovered OR when keyboard focus is inside */
+.mega-menu-item:hover .mega-menu-panel,
+.mega-menu-item:focus-within .mega-menu-panel {
+    display: grid;
+}
+
+/* Trigger link */
+.mega-menu-trigger {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Column headings */
+.mega-menu-column h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+/* Column lists */
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-column li {
+    margin-bottom: 12px;
+}
+
+/* Column links */
+.mega-menu-column a {
+    display: inline-block;
+    color: #555;
+    text-decoration: none;
+}
+
+.mega-menu-column a:hover,
+.mega-menu-column a:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* ---------- MOBILE ACCORDION ---------- */
+
+.category-mobile {
+    width: 100%;
+}
+
+.category-mobile details {
+    padding: 10px 0;
+}
+
+.category-mobile summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.category-mobile ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding-left: 18px;
+}
+
+.category-mobile li {
+    margin: 10px 0;
+}
+
+.category-mobile a {
+    color: #444;
+    text-decoration: none;
+}
+
+.category-mobile a:hover,
+.category-mobile a:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* Indent nested category groups */
+.mobile-category-group {
+    padding-left: 14px;
+}
+
+.mobile-category-group details {
+    border-bottom: 1px solid #eee;
+}
+
+/* ---------- CUSTOM BREAKPOINT: 662px ---------- */
+
+/* BP and wider: desktop navbar and mega-menu */
+@media (min-width: 662px) {
+
+    .mega-menu-item {
+        display: block !important;
+    }
+
+    .category-mobile {
+        display: none !important;
+    }
+
+    .mega-menu-panel {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    /* Override Bootstrap's default 992px navbar expansion */
+    .navbar > .container,
+    .navbar > .container-fluid {
+        flex-wrap: nowrap;
+    }
+
+    .navbar .navbar-toggler {
+        display: none;
+    }
+
+    .navbar .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+/* Below BP: use the hamburger and mobile accordion */
+@media (max-width: 662px) {
+
+    .mega-menu-item {
+        display: none !important;
+    }
+
+    .category-mobile {
+        display: block !important;
+    }
+
+    .mega-menu-panel {
+        display: none !important;
+    }
+}
+
+/*CART-ICON*/
+
+/* Shopping cart icon */
+.cart-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    text-decoration: none;
+    padding: 8px;
+    margin-left: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.cart-link:hover,
+.cart-link:focus-visible {
+    background-color: #f0f0f0;
+    color: hsl(74, 70%, 45%);
+}
+
+
+
 /* Search */
 .search-form {
     flex-shrink: 0;
@@ -39,19 +261,19 @@
 /* Hero section */
 .hero-section-main {
     min-height: 100vh;
-    background-image: url('hero1.jpg');
+    background-image: url('https://placehold.co/1920x1080/ffffff/111111?text=HERO+IMAGE+1');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     padding: 2rem clamp(1rem, 3vw, 2.5rem);
-    color: white;
+    color: #111;
     text-align: left;
 }
 
 .hero-content {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
 }
 
 .hero-content h1 {
@@ -140,19 +362,19 @@
 /* Repeated hero section */
 .hero-section-repeat{
     min-height: 100vh;
-    background-image: url('nflheroimg.jpg');
+    background-image: url('https://placehold.co/1920x1080/ffffff/111111?text=HERO+IMAGE+2');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     padding: 2rem clamp(1rem, 3vw, 2.5rem);
-    color: white;
+    color: #111;
     text-align: left;
 }
 
 .hero-content-repeat{
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
 }
 
 .hero-content-repeat h1{
@@ -177,19 +399,19 @@
 /* Final hero section */
 .hero-section-final{
     min-height: 100vh;
-    background-image: url('nikesoccerimg.jpg');
+    background-image: url('https://placehold.co/1920x1080/ffffff/111111?text=HERO+IMAGE+3');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     padding: 2rem clamp(1rem, 3vw, 2.5rem);
-    color: white;
+    color: #111;
     text-align: left;
 }
 
 .hero-content-final{
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
 }
 
 .hero-content-final h1{
@@ -435,7 +657,7 @@
     min-height: 50vh;
     max-width: 200rem;
     width: 100%;
-    background-image: url('hero1.jpg');
+    background-image: url('https://placehold.co/1920x1080/ffffff/111111?text=HERO+IMAGE+1');
     background-size: cover;
     background-position: center;
     display: flex;
