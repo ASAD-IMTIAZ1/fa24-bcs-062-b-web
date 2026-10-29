@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout</title>
+
+    <style>
+        /* Exam values */
+        :root {
+            --accent: hsl(74, 70%, 45%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 1100px;
+            margin: 25px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        fieldset {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            min-width: 0;
+        }
+
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0 8px;
+        }
+
+        /* Labels on the left, inputs on the right */
+        .field {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 10px;
+            align-items: start;
+            margin: 18px 0;
+        }
+
+        label {
+            padding-top: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Show errors after the user interacts with a field */
+        input:user-invalid,
+        select:user-invalid {
+            border: 2px solid red;
+        }
+
+        .error {
+            display: none;
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        input:user-invalid + .error,
+        select:user-invalid + .error {
+            display: block;
+        }
+
+        /* Submit button */
+        button {
+            grid-column: 1 / -1;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--accent);
+            color: #111;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(0.95);
+        }
+
+        /* BP = 662px: mobile layout */
+        @media (max-width: 662px) {
+            body {
+                padding: 15px;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .field {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            label {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Checkout</h1>
+
+    <form action="#" method="get">
+
+        <!-- First fieldset -->
+        <fieldset>
+            <legend>Contact</legend>
+
+            <div class="field">
+                <label for="fullname">Full name:</label>
+                <div>
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        placeholder="Enter full name"
+                        required>
+                    <span class="error">Please enter your full name.</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="email">Email:</label>
+                <div>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter email"
+                        required>
+                    <span class="error">Please enter a valid email.</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="phone">Phone:</label>
+                <div>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="0300-1234567"
+                        pattern="03[0-9]{2}-[0-9]{7}"
+                        title="Use the format 03XX-XXXXXXX"
+                        required>
+                    <span class="error">Use 03XX-XXXXXXX format.</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Second fieldset -->
+        <fieldset>
+            <legend>Delivery</legend>
+
+            <div class="field">
+                <label for="address">Address:</label>
+                <div>
+                    <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        placeholder="Enter address"
+                        required>
+                    <span class="error">Please enter your address.</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="city">City:</label>
+                <div>
+                    <select id="city" name="city" required>
+                        <option value="" selected disabled>
+                            Select a city
+                        </option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Karachi">Karachi</option>
+                        <option value="Islamabad">Islamabad</option>
+                        <option value="Peshawar">Peshawar</option>
+                        <option value="Quetta">Quetta</option>
+                    </select>
+                    <span class="error">Please select a city.</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="delivery-date">Delivery date:</label>
+                <div>
+                    <input
+                        type="date"
+                        id="delivery-date"
+                        name="delivery-date"
+                        min="2026-10-29"
+                        max="2026-12-30"
+                        required>
+                    <span class="error">
+                        Choose a date from 29 Oct to 30 Dec 2026.
+                    </span>
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+</body>
+</html>
